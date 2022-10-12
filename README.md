@@ -1,3 +1,3 @@
 # keatsCaptionsExtractor
 
-run the captions_extractor.py file
+run the caption_extractor.py file
