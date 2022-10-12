@@ -23,8 +23,6 @@ def process_browser_log_entry(entry):
     return response
 
 browser_log = driver.get_log('performance') #log is returned as a list
-#for i in browser_log:
-	#print(i)
  
 urls = [] 
 for i in range (len(browser_log)):
@@ -43,6 +41,7 @@ if target != False:
     url = (driver.find_element(By.TAG_NAME, 'body').get_attribute('innerText'))[2:-2]
     driver.get(url)
     response = driver.find_element(By.TAG_NAME, ('body')).get_attribute('innerText')
+    driver.close()
     subFile = open('temp.srt', 'w')
     subFile.write(response)
     subFile.close()

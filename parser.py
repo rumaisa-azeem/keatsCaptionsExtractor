@@ -12,3 +12,7 @@ def parseSubs(filename):
             text += ' ' + line.rstrip('\n')
         text = text.lstrip()
     return('\n'+ text + '\n')
+
+'''
+creds to https://stackoverflow.com/questions/51073045/parsing-transcript-srt-files-into-readable-text
+'''
