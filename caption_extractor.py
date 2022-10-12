@@ -3,6 +3,9 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities#
 import json
 import time
 from selenium.webdriver.common.by import By
+from parser import parseSubs
+import webbrowser
+import os
 
 caps = DesiredCapabilities.CHROME
 caps['goog:loggingPrefs'] = {'performance': 'ALL'}
@@ -39,5 +42,15 @@ if target != False:
     driver.get(target)
     url = (driver.find_element(By.TAG_NAME, 'body').get_attribute('innerText'))[2:-2]
     driver.get(url)
+    response = driver.find_element(By.TAG_NAME, ('body')).get_attribute('innerText')
+    subFile = open('temp.srt', 'w')
+    subFile.write(response)
+    subFile.close()
+    para = parseSubs('temp.srt')
+    output = open('output.txt', 'w')
+    output.write(para)
+    output.close()
+    os.remove('temp.srt')
+    webbrowser.open('output.txt')
     
-input('hit enter to quit')
+input('extraction complete - hit enter to quit')
