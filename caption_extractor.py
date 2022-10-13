@@ -6,6 +6,11 @@ from selenium.webdriver.common.by import By
 from parser import parseSubs
 import webbrowser
 import os
+import sys
+from driver_setup import setupDriver
+
+#setupDriver()
+#sys.path.append(os.getcwd())
 
 caps = DesiredCapabilities.CHROME
 caps['goog:loggingPrefs'] = {'performance': 'ALL'}
