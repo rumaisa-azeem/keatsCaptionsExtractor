@@ -1,10 +1,15 @@
 # keatsCaptionsExtractor
 
-warning this only works for windows so far sorry lol updates are on the way
+- you must have python installed on your computer
 
-run the caption_extractor.py file --> follow instructions in terminal
+- download and extract the zip file --> run the caption_extractor.py file --> follow instructions in terminal
 
-if it doesn't work open up terminal and try:
+- warning this only works for windows so far sorry lol updates are on the way
+
+## troubleshooting
+
+- if it doesn't work open up terminal and try:
 ```
 pip install selenium
 ```
+- make sure Google Chrome is up to date (version 105 or later)
